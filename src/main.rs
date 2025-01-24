@@ -5,6 +5,8 @@ mod max_coins;
 mod two_sum;
 mod longest_consecutive;
 mod move_zeroes;
+mod max_area;
+
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
     println!("{}", max_coins::max_coins(piles));
@@ -24,4 +26,9 @@ fn main() {
     let mut nums  = vec![0,1,0,3,12];
     move_zeroes::move_zeroes(&mut nums);
     println!(" {:?} ", nums);
+
+
+    let height = vec![1,8,6,2,5,4,8,3,7];
+    println!(" {} ", max_area::max_area(height));
+
 }
