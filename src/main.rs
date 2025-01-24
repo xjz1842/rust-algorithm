@@ -4,6 +4,7 @@ mod group_anagrams;
 mod max_coins;
 mod two_sum;
 mod longest_consecutive;
+mod move_zeroes;
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
     println!("{}", max_coins::max_coins(piles));
@@ -19,4 +20,8 @@ fn main() {
 
     let nums = vec![0,3,7,2,5,8,4,6,0,1];
     println!("{}", longest_consecutive::longest_consecutive(nums));
+
+    let mut nums  = vec![0,1,0,3,12];
+    move_zeroes::move_zeroes(&mut nums);
+    println!(" {:?} ", nums);
 }
