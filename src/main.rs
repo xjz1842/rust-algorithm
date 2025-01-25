@@ -6,6 +6,7 @@ mod two_sum;
 mod longest_consecutive;
 mod move_zeroes;
 mod max_area;
+mod three_sum;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -31,4 +32,7 @@ fn main() {
     let height = vec![1,8,6,2,5,4,8,3,7];
     println!(" {} ", max_area::max_area(height));
 
+
+    let  nums= vec![-1,0,1,2,-1,-4];
+    println!(" {:?} ", three_sum::three_sum(nums));
 }
