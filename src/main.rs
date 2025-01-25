@@ -1,12 +1,17 @@
 use std::vec;
 
-mod group_anagrams;
-mod max_coins;
-mod two_sum;
-mod longest_consecutive;
-mod move_zeroes;
-mod max_area;
-mod three_sum;
+mod dual_pointer;
+mod hash;
+mod greedy;
+
+use hash::group_anagrams;
+use hash::longest_consecutive;
+use hash::two_sum;
+use greedy::max_coins;
+use dual_pointer::max_area;
+use dual_pointer::move_zeroes;
+use dual_pointer::three_sum;
+use dual_pointer::trap;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -28,11 +33,12 @@ fn main() {
     move_zeroes::move_zeroes(&mut nums);
     println!(" {:?} ", nums);
 
-
     let height = vec![1,8,6,2,5,4,8,3,7];
     println!(" {} ", max_area::max_area(height));
 
-
     let  nums= vec![-1,0,1,2,-1,-4];
     println!(" {:?} ", three_sum::three_sum(nums));
+
+    let height = vec![0,1,0,2,1,0,1,3,2,1,2,1];
+    println!(" {:?} ",    trap::trap(height));
 }

@@ -16,7 +16,7 @@ pub fn max_coins(piles: Vec<i32>) -> i32 {
     piles.sort();
 
     let length = piles.len();
-    let rounds = length / 3;
+    let rounds: usize = length / 3;
 
     let mut coins = 0;
     let mut index = length - 2;
