@@ -15,6 +15,7 @@ use dual_pointer::move_zeroes;
 use dual_pointer::three_sum;
 use dual_pointer::trap;
 use slide_window::length_of_longest_substring;
+use slide_window::find_anagrams;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -48,4 +49,10 @@ fn main() {
     let s = "abcabcbb".to_string();
     println!("{}",length_of_longest_substring::
     length_of_longest_substring(s));
+
+
+    let s = "cbaebabacd".to_string();
+    let p = "abc".to_string();
+    println!("{:?}",find_anagrams::find_anagrams(s,p));
+
 }
