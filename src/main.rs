@@ -3,6 +3,8 @@ use std::vec;
 mod dual_pointer;
 mod hash;
 mod greedy;
+mod slide_window;
+
 
 use hash::group_anagrams;
 use hash::longest_consecutive;
@@ -12,6 +14,7 @@ use dual_pointer::max_area;
 use dual_pointer::move_zeroes;
 use dual_pointer::three_sum;
 use dual_pointer::trap;
+use slide_window::length_of_longest_substring;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -41,4 +44,8 @@ fn main() {
 
     let height = vec![0,1,0,2,1,0,1,3,2,1,2,1];
     println!(" {:?} ",    trap::trap(height));
+
+    let s = "abcabcbb".to_string();
+    println!("{}",length_of_longest_substring::
+    length_of_longest_substring(s));
 }
