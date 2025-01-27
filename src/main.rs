@@ -6,6 +6,7 @@ mod greedy;
 mod slide_window;
 mod subarray;
 mod array;
+mod binary_search;
 
 use hash::group_anagrams;
 use hash::longest_consecutive;
@@ -19,6 +20,8 @@ use slide_window::length_of_longest_substring;
 use slide_window::find_anagrams;
 use subarray::subarray_sum;
 use array::max_sub_array;
+
+use binary_search::search_insert;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -64,4 +67,9 @@ fn main() {
 
     let nums = vec![5,4,-1,7,8];
     println!("{}",max_sub_array::max_sub_array(nums));
+
+    let nums = vec![1,3,5,6];
+    let target = 0;
+    println!("{}", search_insert::search_insert(nums, target));
+
 }
