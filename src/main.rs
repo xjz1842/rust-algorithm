@@ -5,6 +5,7 @@ mod hash;
 mod greedy;
 mod slide_window;
 mod subarray;
+mod array;
 
 use hash::group_anagrams;
 use hash::longest_consecutive;
@@ -17,6 +18,7 @@ use dual_pointer::trap;
 use slide_window::length_of_longest_substring;
 use slide_window::find_anagrams;
 use subarray::subarray_sum;
+use array::max_sub_array;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -59,4 +61,7 @@ fn main() {
     let k = 3;
     println!("{}", subarray_sum::subarray_sum(nums.clone(), k));
     println!("{}", subarray_sum::subarray_sum1(nums.clone(), k));
+
+    let nums = vec![5,4,-1,7,8];
+    println!("{}",max_sub_array::max_sub_array(nums));
 }
