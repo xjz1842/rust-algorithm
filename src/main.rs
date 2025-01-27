@@ -4,7 +4,7 @@ mod dual_pointer;
 mod hash;
 mod greedy;
 mod slide_window;
-
+mod subarray;
 
 use hash::group_anagrams;
 use hash::longest_consecutive;
@@ -16,6 +16,7 @@ use dual_pointer::three_sum;
 use dual_pointer::trap;
 use slide_window::length_of_longest_substring;
 use slide_window::find_anagrams;
+use subarray::subarray_sum;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -50,9 +51,12 @@ fn main() {
     println!("{}",length_of_longest_substring::
     length_of_longest_substring(s));
 
-
     let s = "cbaebabacd".to_string();
     let p = "abc".to_string();
     println!("{:?}",find_anagrams::find_anagrams(s,p));
 
+    let nums = vec![1,2,1,2,1];
+    let k = 3;
+    println!("{}", subarray_sum::subarray_sum(nums.clone(), k));
+    println!("{}", subarray_sum::subarray_sum1(nums.clone(), k));
 }
