@@ -20,6 +20,7 @@ use slide_window::length_of_longest_substring;
 use slide_window::find_anagrams;
 use subarray::subarray_sum;
 use array::max_sub_array;
+use array::merge;
 
 use binary_search::search_insert;
 
@@ -72,4 +73,6 @@ fn main() {
     let target = 0;
     println!("{}", search_insert::search_insert(nums, target));
 
+   let intervals = vec![vec![1,4],vec![2,3]];
+   println!(" {:?} ", merge::merge(intervals))
 }
