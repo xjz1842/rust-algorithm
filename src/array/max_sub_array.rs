@@ -1,6 +1,10 @@
 
 pub fn max_sub_array(nums: Vec<i32>) -> i32 {
-    let mut max  = 0;
+
+    if nums.len() == 0 {
+        return 0;
+    }
+    let mut max  = nums[0];
 
     let mut pre_sum = 0;
 
