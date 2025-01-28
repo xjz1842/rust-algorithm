@@ -22,6 +22,8 @@ use slide_window::find_anagrams;
 use subarray::subarray_sum;
 use subarray::max_sliding_window;
 use subarray::min_window;
+use subarray::product_except_self;
+
 use array::max_sub_array;
 use array::merge;
 use array::rotate;
@@ -93,4 +95,7 @@ fn main() {
     let s = "ADOBECODEBANC".to_string();
     let t = "ABC".to_string();
     println!("{:?}", min_window::min_window(s, t));
+
+    let nums = vec![-1,1,0,-3,3];
+    println!("{:?}", product_except_self::product_except_self(nums));
 }
