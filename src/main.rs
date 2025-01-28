@@ -21,6 +21,7 @@ use slide_window::find_anagrams;
 use subarray::subarray_sum;
 use array::max_sub_array;
 use array::merge;
+use array::rotate;
 
 use binary_search::search_insert;
 
@@ -74,5 +75,11 @@ fn main() {
     println!("{}", search_insert::search_insert(nums, target));
 
    let intervals = vec![vec![1,4],vec![2,3]];
-   println!(" {:?} ", merge::merge(intervals))
+   println!(" {:?} ", merge::merge(intervals));
+
+   let mut nums = vec![1,2,3,4,5,6,7];
+   let k = 3;
+   rotate::rotate(& mut nums, k);
+   println!("{:?}",nums);
+
 }
