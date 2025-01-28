@@ -21,7 +21,7 @@ use slide_window::length_of_longest_substring;
 use slide_window::find_anagrams;
 use subarray::subarray_sum;
 use subarray::max_sliding_window;
-
+use subarray::min_window;
 use array::max_sub_array;
 use array::merge;
 use array::rotate;
@@ -88,6 +88,9 @@ fn main() {
 
    let nums = vec![1,3,-1,-3,5,3,6,7];
    let k = 3;
-   println!("{:?}", max_sliding_window::max_sliding_window(nums, k))
+   println!("{:?}", max_sliding_window::max_sliding_window(nums, k));
      
+    let s = "ADOBECODEBANC".to_string();
+    let t = "ABC".to_string();
+    println!("{:?}", min_window::min_window(s, t));
 }
