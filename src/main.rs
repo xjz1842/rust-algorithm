@@ -20,13 +20,14 @@ use dual_pointer::trap;
 use slide_window::length_of_longest_substring;
 use slide_window::find_anagrams;
 use subarray::subarray_sum;
+use subarray::max_sliding_window;
+
 use array::max_sub_array;
 use array::merge;
 use array::rotate;
 
 use binary_search::search_insert;
 
-use binary_tree::diameter_of_binary_tree;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -85,6 +86,8 @@ fn main() {
    rotate::rotate(& mut nums, k);
    println!("{:?}",nums);
 
-    
+   let nums = vec![1,3,-1,-3,5,3,6,7];
+   let k = 3;
+   println!("{:?}", max_sliding_window::max_sliding_window(nums, k))
      
 }
