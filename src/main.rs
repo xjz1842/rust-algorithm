@@ -7,6 +7,7 @@ mod slide_window;
 mod subarray;
 mod array;
 mod binary_search;
+mod binary_tree;
 
 use hash::group_anagrams;
 use hash::longest_consecutive;
@@ -24,6 +25,8 @@ use array::merge;
 use array::rotate;
 
 use binary_search::search_insert;
+
+use binary_tree::diameter_of_binary_tree;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -82,4 +85,6 @@ fn main() {
    rotate::rotate(& mut nums, k);
    println!("{:?}",nums);
 
+    
+     
 }
