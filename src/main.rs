@@ -27,6 +27,7 @@ use subarray::product_except_self;
 use array::max_sub_array;
 use array::merge;
 use array::rotate;
+use array::first_missing_positive;
 
 use binary_search::search_insert;
 
@@ -98,4 +99,7 @@ fn main() {
 
     let nums = vec![-1,1,0,-3,3];
     println!("{:?}", product_except_self::product_except_self(nums));
+
+    let nums = vec![-1,4,2,1,9,10];
+    println!("{:?}",first_missing_positive::first_missing_positive(nums));
 }
