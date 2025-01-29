@@ -8,6 +8,7 @@ mod subarray;
 mod array;
 mod binary_search;
 mod binary_tree;
+mod matrix;
 
 use hash::group_anagrams;
 use hash::longest_consecutive;
@@ -31,6 +32,7 @@ use array::first_missing_positive;
 
 use binary_search::search_insert;
 
+use matrix::set_zeroes;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -102,4 +104,9 @@ fn main() {
 
     let nums = vec![-1,4,2,1,9,10];
     println!("{:?}",first_missing_positive::first_missing_positive(nums));
+
+    let mut matrix:Vec<Vec<i32>> = vec![vec![0,1,2,0],vec![3,4,5,2],
+    vec![1,3,1,5]];
+    set_zeroes::set_zeroes(&mut matrix);
+    println!("{:?}",matrix);
 }
