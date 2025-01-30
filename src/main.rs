@@ -33,6 +33,7 @@ use array::first_missing_positive;
 use binary_search::search_insert;
 
 use matrix::set_zeroes;
+use matrix::spiral_order;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -109,4 +110,9 @@ fn main() {
     vec![1,3,1,5]];
     set_zeroes::set_zeroes(&mut matrix);
     println!("{:?}",matrix);
+
+    let matrix:Vec<Vec<i32>> = vec![vec![1,2,3],vec![4,5,6],
+    vec![7,8,9]];
+    println!("{:?}",spiral_order::spiral_order(matrix));
+    
 }
