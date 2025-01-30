@@ -34,6 +34,7 @@ use binary_search::search_insert;
 
 use matrix::set_zeroes;
 use matrix::spiral_order;
+use matrix::rotate as matrix_rotate;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -114,5 +115,10 @@ fn main() {
     let matrix:Vec<Vec<i32>> = vec![vec![1,2,3],vec![4,5,6],
     vec![7,8,9]];
     println!("{:?}",spiral_order::spiral_order(matrix));
-    
+
+    let mut matrix:Vec<Vec<i32>> = vec![vec![1,2,3],vec![4,5,6],
+    vec![7,8,9]];
+    matrix_rotate::rotate(&mut matrix);
+    println!("{:?}", matrix);
+
 }
