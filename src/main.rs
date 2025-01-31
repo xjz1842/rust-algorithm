@@ -10,6 +10,10 @@ mod binary_search;
 mod binary_tree;
 mod matrix;
 
+mod linklist;
+
+mod stack;
+
 use hash::group_anagrams;
 use hash::longest_consecutive;
 use hash::two_sum;
@@ -18,6 +22,7 @@ use dual_pointer::max_area;
 use dual_pointer::move_zeroes;
 use dual_pointer::three_sum;
 use dual_pointer::trap;
+use linklist::reverse_list::ListNode;
 use slide_window::length_of_longest_substring;
 use slide_window::find_anagrams;
 use subarray::subarray_sum;
@@ -36,6 +41,10 @@ use matrix::set_zeroes;
 use matrix::spiral_order;
 use matrix::rotate as matrix_rotate;
 use matrix::search_matrix;
+
+use linklist::reverse_list;
+
+use stack::daily_temperatures;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -126,4 +135,12 @@ fn main() {
       vec![vec![-5]];
       let target = 5;
       println!("{:?}", search_matrix::search_matrix(matrix, target));
+         
+     let mut head =  reverse_list::ListNode::new(1);
+     head.next = Some(Box::new(ListNode::new(2)));
+     println!("{:?}", reverse_list::reverse_list(Some(Box::new(head))));
+
+    let temperatures = vec![73,74,75,71,69,72,76,73];
+    println!("{:?}", daily_temperatures::daily_temperatures(temperatures));
+
 }
