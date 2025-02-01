@@ -16,6 +16,8 @@ mod stack;
 
 mod backstrace;
 
+mod dynamic_program;
+
 use hash::group_anagrams;
 use hash::longest_consecutive;
 use hash::two_sum;
@@ -50,6 +52,8 @@ use linklist::reverse_list;
 use stack::daily_temperatures;
 
 use backstrace::permute;
+
+use dynamic_program::climb_stairs;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -154,4 +158,6 @@ fn main() {
     let nums =vec![1,2,3];
     println!("{:?}", permute::permute(nums));
 
+    let n = 10;
+    println!(" {} ", climb_stairs::climb_stairs(n));
 }
