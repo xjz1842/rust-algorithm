@@ -18,6 +18,8 @@ mod backstrace;
 
 mod dynamic_program;
 
+mod graph;
+
 use hash::group_anagrams;
 use hash::longest_consecutive;
 use hash::two_sum;
@@ -54,6 +56,8 @@ use stack::daily_temperatures;
 use backstrace::permute;
 
 use dynamic_program::climb_stairs;
+
+use graph::num_islands;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -160,4 +164,13 @@ fn main() {
 
     let n = 10;
     println!(" {} ", climb_stairs::climb_stairs(n));
+
+    let mut grid = vec![
+        vec!['1','1','1','1','0'],
+        vec!['1','1','0','1','0'],
+        vec!['1','1','0','0','0'],
+        vec!['0','0','0','0','0']];
+
+    println!("nums of islands  {} ", num_islands
+    ::num_islands(&mut grid));
 }
