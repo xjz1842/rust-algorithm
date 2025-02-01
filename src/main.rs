@@ -34,6 +34,7 @@ use array::max_sub_array;
 use array::merge;
 use array::rotate;
 use array::first_missing_positive;
+use array::merge_k;
 
 use binary_search::search_insert;
 
@@ -97,6 +98,9 @@ fn main() {
 
    let intervals = vec![vec![1,4],vec![2,3]];
    println!(" {:?} ", merge::merge(intervals));
+   
+   let intervals = vec![vec![1,4],vec![2,3]];
+   println!(" merge_k_sorted_vecs {:?} ", merge_k::merge_k_sorted_vecs(intervals));
 
    let mut nums = vec![1,2,3,4,5,6,7];
    let k = 3;
