@@ -14,6 +14,8 @@ mod linklist;
 
 mod stack;
 
+mod backstrace;
+
 use hash::group_anagrams;
 use hash::longest_consecutive;
 use hash::two_sum;
@@ -46,6 +48,8 @@ use matrix::search_matrix;
 use linklist::reverse_list;
 
 use stack::daily_temperatures;
+
+use backstrace::permute;
 
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
@@ -146,5 +150,8 @@ fn main() {
 
     let temperatures = vec![73,74,75,71,69,72,76,73];
     println!("{:?}", daily_temperatures::daily_temperatures(temperatures));
+
+    let nums =vec![1,2,3];
+    println!("{:?}", permute::permute(nums));
 
 }
