@@ -20,6 +20,8 @@ mod dynamic_program;
 
 mod graph;
 
+mod logic;
+
 use hash::group_anagrams;
 use hash::longest_consecutive;
 use hash::two_sum;
@@ -59,6 +61,7 @@ use dynamic_program::climb_stairs;
 
 use graph::num_islands;
 
+use logic::find_duplicate;
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
     println!("{}", max_coins::max_coins(piles));
@@ -165,12 +168,16 @@ fn main() {
     let n = 10;
     println!(" {} ", climb_stairs::climb_stairs(n));
 
-    let mut grid = vec![
+    let  grid = vec![
         vec!['1','1','1','1','0'],
         vec!['1','1','0','1','0'],
         vec!['1','1','0','0','0'],
         vec!['0','0','0','0','0']];
 
     println!("nums of islands  {} ", num_islands
-    ::num_islands(&mut grid));
+    ::num_islands(grid));
+
+    let nums = vec![1,3,4,2,2];
+    println!("{}", find_duplicate::find_duplicate(nums));
+
 }
