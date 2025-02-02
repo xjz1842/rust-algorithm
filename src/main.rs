@@ -58,10 +58,13 @@ use stack::daily_temperatures;
 use backstrace::permute;
 
 use dynamic_program::climb_stairs;
+use dynamic_program::rob;
 
 use graph::num_islands;
 
 use logic::find_duplicate;
+
+
 fn main() {
     let piles = vec![2, 4, 1, 2, 7, 8];
     println!("{}", max_coins::max_coins(piles));
@@ -167,6 +170,9 @@ fn main() {
 
     let n = 10;
     println!(" {} ", climb_stairs::climb_stairs(n));
+
+    let nums = vec![1,2,3,1];
+    println!("rob {}", rob::rob(nums));
 
     let  grid = vec![
         vec!['1','1','1','1','0'],
