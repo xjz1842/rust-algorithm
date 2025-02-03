@@ -56,6 +56,7 @@ use linklist::reverse_list;
 use stack::daily_temperatures;
 
 use backstrace::permute;
+use backstrace::subsets;
 
 use dynamic_program::climb_stairs;
 use dynamic_program::rob;
@@ -167,6 +168,8 @@ fn main() {
 
     let nums =vec![1,2,3];
     println!("{:?}", permute::permute(nums));
+    let nums = vec![1,2,3];
+    println!("subsets {:?}", subsets::subsets(nums));
 
     let n = 10;
     println!(" {} ", climb_stairs::climb_stairs(n));
