@@ -22,6 +22,7 @@ mod graph;
 
 mod logic;
 
+use backstrace::letter_combinations::letter_combinations;
 use hash::group_anagrams;
 use hash::longest_consecutive;
 use hash::two_sum;
@@ -58,6 +59,7 @@ use stack::daily_temperatures;
 use backstrace::permute;
 use backstrace::subsets;
 use backstrace::generate_parenthesis;
+use backstrace::letter_combinations;
 
 use dynamic_program::climb_stairs;
 use dynamic_program::rob;
@@ -173,6 +175,9 @@ fn main() {
     println!("subsets {:?}", subsets::subsets(nums));
     let n = 3;
     println!("generate_parenthesis  {:?}",generate_parenthesis::generate_parenthesis(n));
+    let digits = "23".to_string();
+    println!("letter_combinations {:?}", letter_combinations::letter_combinations(digits));
+
     let n = 10;
     println!(" {} ", climb_stairs::climb_stairs(n));
 
