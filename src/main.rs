@@ -22,7 +22,6 @@ mod graph;
 
 mod logic;
 
-use backstrace::letter_combinations::letter_combinations;
 use hash::group_anagrams;
 use hash::longest_consecutive;
 use hash::two_sum;
@@ -46,6 +45,7 @@ use array::first_missing_positive;
 use array::merge_k;
 
 use binary_search::search_insert;
+use binary_search::search_matrix as search_matrix_binary_search;
 
 use matrix::set_zeroes;
 use matrix::spiral_order;
@@ -116,8 +116,14 @@ fn main() {
     println!("{}",max_sub_array::max_sub_array(nums));
 
     let nums = vec![1,3,5,6];
-    let target = 0;
-    println!("{}", search_insert::search_insert(nums, target));
+    let target = 2;
+    println!("search_insert {}", search_insert::search_insert(nums, target));
+
+    let matrix = vec![vec![1,3,5,7],
+    vec![10,11,16,20],vec![23,30,34,60]];
+    let target = 3;
+    println!("search_matrix_binary_search::
+    search_matrix {}", search_matrix_binary_search::search_matrix(matrix, target));
 
    let intervals = vec![vec![1,4],vec![2,3]];
    println!(" {:?} ", merge::merge(intervals));
