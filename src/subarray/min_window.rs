@@ -1,7 +1,7 @@
 
 
 pub fn min_window(s: String, t: String) -> String {
-    let S = s.as_bytes();
+    let s_bytes = s.as_bytes();
     let m = s.len();
     let mut ans_left = 0;
     let mut ans_right = m;
@@ -18,7 +18,7 @@ pub fn min_window(s: String, t: String) -> String {
 
     let mut left = 0;
 
-    for (right, &c) in S.iter().enumerate() { // 移动子串右端点
+    for (right, &c) in s_bytes.iter().enumerate() { // 移动子串右端点
         let c = c as usize;
         cnt[c] -= 1; // 右端点字母移入子串
         if cnt[c] == 0 {
@@ -30,7 +30,7 @@ pub fn min_window(s: String, t: String) -> String {
                 ans_left = left; // 记录此时的左右端点
                 ans_right = right;
             }
-            let x = S[left] as usize; // 左端点字母
+            let x = s_bytes[left] as usize; // 左端点字母
             if cnt[x] == 0 {
                 // x 移出窗口之前，检查出现次数，
                 // 如果窗口内 x 的出现次数和 t 一样，
