@@ -60,6 +60,7 @@ use backstrace::permute;
 use backstrace::subsets;
 use backstrace::generate_parenthesis;
 use backstrace::letter_combinations;
+use backstrace::combination_sum;
 
 use dynamic_program::climb_stairs;
 use dynamic_program::rob;
@@ -177,6 +178,9 @@ fn main() {
     println!("generate_parenthesis  {:?}",generate_parenthesis::generate_parenthesis(n));
     let digits = "23".to_string();
     println!("letter_combinations {:?}", letter_combinations::letter_combinations(digits));
+    let candidates = vec![7,3,2];
+    let target =    18;
+    println!("combination_sum {:?}", combination_sum::combination_sum(candidates, target));
 
     let n = 10;
     println!(" {} ", climb_stairs::climb_stairs(n));
