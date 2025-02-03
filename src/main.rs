@@ -57,6 +57,7 @@ use stack::daily_temperatures;
 
 use backstrace::permute;
 use backstrace::subsets;
+use backstrace::generate_parenthesis;
 
 use dynamic_program::climb_stairs;
 use dynamic_program::rob;
@@ -170,7 +171,8 @@ fn main() {
     println!("{:?}", permute::permute(nums));
     let nums = vec![1,2,3];
     println!("subsets {:?}", subsets::subsets(nums));
-
+    let n = 3;
+    println!("generate_parenthesis  {:?}",generate_parenthesis::generate_parenthesis(n));
     let n = 10;
     println!(" {} ", climb_stairs::climb_stairs(n));
 
