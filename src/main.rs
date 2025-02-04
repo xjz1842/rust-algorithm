@@ -48,6 +48,7 @@ use array::rotate;
 
 use binary_search::search_insert;
 use binary_search::search_matrix as search_matrix_binary_search;
+use binary_search::search_range;
 
 use matrix::rotate as matrix_rotate;
 use matrix::search_matrix;
@@ -135,6 +136,13 @@ fn main() {
         "search_matrix_binary_search::
     search_matrix {}",
         search_matrix_binary_search::search_matrix(matrix, target)
+    );
+
+    let nums = vec![1, 3, 5, 6];
+    let target = 3;
+    println!(
+        "search_range {:?}",
+        search_range::search_range(nums, target)
     );
 
     let intervals = vec![vec![1, 4], vec![2, 3]];
