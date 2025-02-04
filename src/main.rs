@@ -55,6 +55,7 @@ use matrix::set_zeroes;
 use matrix::spiral_order;
 
 use linklist::reverse_list;
+use linklist::is_palindrome;
 
 use stack::daily_temperatures;
 
@@ -182,6 +183,10 @@ fn main() {
     let mut head = reverse_list::ListNode::new(1);
     head.next = Some(Box::new(ListNode::new(2)));
     println!("{:?}", reverse_list::reverse_list(Some(Box::new(head))));
+   
+    let mut head = is_palindrome::ListNode::new(1);
+    head.next = Some(Box::new(is_palindrome::ListNode::new(2)));
+    println!("is_palindrome {:?}", is_palindrome::is_palindrome(Some(Box::new(head))));
 
     let temperatures = vec![73, 74, 75, 71, 69, 72, 76, 73];
     println!("{:?}", daily_temperatures::daily_temperatures(temperatures));
