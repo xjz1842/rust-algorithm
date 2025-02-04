@@ -70,6 +70,7 @@ use backstrace::subsets;
 
 use dynamic_program::climb_stairs;
 use dynamic_program::rob;
+use dynamic_program::can_partition;
 
 use graph::num_islands;
 
@@ -225,6 +226,9 @@ fn main() {
 
     let nums = vec![1, 2, 3, 1];
     println!("rob {}", rob::rob(nums));
+
+    let nums = vec![1,2,5];
+    println!("can_partition {}",can_partition::can_partition(nums));
 
     let grid = vec![
         vec!['1', '1', '1', '1', '0'],
