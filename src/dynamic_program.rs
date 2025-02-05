@@ -5,3 +5,5 @@ pub mod  rob;
 pub mod can_partition;
 
 pub mod coin_change;
+
+pub mod num_squares;
