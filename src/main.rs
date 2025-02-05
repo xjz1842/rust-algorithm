@@ -71,6 +71,7 @@ use backstrace::subsets;
 use dynamic_program::climb_stairs;
 use dynamic_program::rob;
 use dynamic_program::can_partition;
+use dynamic_program::coin_change;
 
 use graph::num_islands;
 
@@ -230,6 +231,10 @@ fn main() {
     let nums = vec![1,2,5];
     println!("can_partition {}",can_partition::can_partition(nums));
 
+    let coins = vec![1, 2, 5];
+    let amount = 3;
+    println!("coin_change {}", coin_change::coin_change(coins, amount));
+
     let grid = vec![
         vec!['1', '1', '1', '1', '0'],
         vec!['1', '1', '0', '1', '0'],
@@ -240,11 +245,12 @@ fn main() {
     println!("nums of islands  {} ", num_islands::num_islands(grid));
 
     let nums = vec![1, 3, 4, 2, 2];
-    println!("{}", find_duplicate::find_duplicate(nums));
+    println!("find_duplicate {}", find_duplicate::find_duplicate(nums));
 
     // tree
     let root = Some(Rc::new(RefCell::new(
         diameter_of_binary_tree::TreeNode::new(1),
     )));
-    println!("{}", diameter_of_binary_tree::diameter_of_binary_tree(root));
+    println!("diameter_of_binary_tree {}", diameter_of_binary_tree::diameter_of_binary_tree(root));
+    
 }
