@@ -9,3 +9,5 @@ pub mod coin_change;
 pub mod num_squares;
 
 pub mod word_break;
+
+pub mod max_product;
