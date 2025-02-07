@@ -1,6 +1,7 @@
 
 
 pub fn max_product(nums: Vec<i32>) -> i32 {
+      let n = nums.len();
       let mut f_max = vec![0; n];
       let mut f_min = vec![0; n];
 
