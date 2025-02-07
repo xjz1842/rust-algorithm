@@ -13,7 +13,7 @@ pub fn length_of_lis(nums: Vec<i32>) -> i32 {
             max = max.max(dp[i]);
         }
     }
-   
+    max
 }
 
 #[test]
