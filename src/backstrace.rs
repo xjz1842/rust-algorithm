@@ -9,3 +9,5 @@ pub mod letter_combinations;
 pub mod  combination_sum;
 
 pub mod exist;
+
+pub mod partition;
