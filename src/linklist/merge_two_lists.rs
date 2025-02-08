@@ -46,9 +46,8 @@ fn merge_two_lists_test() {
     let  list1 = Some(Box::new(ListNode::new(1)));
     let  list2 = Some(Box::new(ListNode::new(2)));
     let mut list = merge_two_lists(list1,list2);
-    while list.is_some() {
-        println!("{}", list.unwrap().val);
-        list = list.unwrap().next;
+    while let Some(node) = &list {
+        println!("{}", node.val);
+        list = list.take().unwrap().next;
     }
-
 }
