@@ -11,3 +11,5 @@ pub mod merge_k;
 pub mod sort;
 
 pub mod list;
+
+pub mod heap;
