@@ -19,3 +19,5 @@ pub mod find_missing_number;
 pub mod is_palindrome;
 
 pub mod are_anagrams;
+
+pub mod find_duplicate_number;
