@@ -3,8 +3,6 @@
 	This question requires you to use queues to implement the functionality of the stack
 */
 
-use std::f32::consts::E;
-
 
 #[derive(Debug)]
 pub struct Queue<T> {
