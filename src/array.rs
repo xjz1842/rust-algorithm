@@ -15,3 +15,5 @@ pub mod list;
 pub mod heap;
 
 pub mod find_missing_number;
+
+pub mod is_palindrome;
