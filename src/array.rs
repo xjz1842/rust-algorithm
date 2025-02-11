@@ -13,3 +13,5 @@ pub mod sort;
 pub mod list;
 
 pub mod heap;
+
+pub mod find_missing_number;
