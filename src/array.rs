@@ -21,3 +21,5 @@ pub mod is_palindrome;
 pub mod are_anagrams;
 
 pub mod find_duplicate_number;
+
+pub mod long_unrepeat_substring;
