@@ -9,8 +9,6 @@
     Hint: You can modify the input array in place to track duplicates.
 */
 
-use std::fmt::{self, Display, Formatter};
-
 pub fn find_duplicates(nums: Vec<i32>) -> Vec<i32> {
     // TODO: Implement the logic to find all duplicates in the array
      let mut nums = nums;

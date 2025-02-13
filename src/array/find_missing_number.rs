@@ -11,8 +11,6 @@
     Hint: Use the sum of the first `n` numbers and subtract the sum of the array elements to find the missing number.
 */
 
-use std::fmt::{self, Display, Formatter};
-
 pub fn find_missing_number(nums: Vec<i32>) -> i32 {
      let len = nums.len();
      let sum = (len+1) * (len + 2) / 2;
