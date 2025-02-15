@@ -24,15 +24,21 @@ pub fn add_two_numbers(l1: Option<Box<ListNode>>,
     let mut l1 = l1;
     let mut l2 =  l2;
 
-    while let (Some(node1), Some(node2)) = (& l1,& l2) {
-         let mut sum = node1.val +  node2.val + carry;
-         carry = 0;
-         if sum >= 10 {
+    while l1.is_some() || l2.is_some() || carry != 0 {
+        let mut sum =  carry;
+        if let Some(node1) = l1 {
+            sum += node1.val;
+            l1 = node1.next;
+         }  
+         if let Some(node2) = l2 {
+            sum += node2.val;
+            l2 = node2.next;
+        }  
+        carry = 0;
+        if sum >= 10 {
             carry = 1;
             sum -= 10;
          } 
-         l1 = node1.next.clone();
-         l2 = node2.next.clone();
          match cur {
              Some(node) => {
                   node.next = Some(Box::new(ListNode::new(sum)));
@@ -42,39 +48,6 @@ pub fn add_two_numbers(l1: Option<Box<ListNode>>,
          } 
     }
 
-    while let Some(node1) = & l1 {
-        let mut sum: i32 = node1.val + carry;
-         carry = 0;
-         if sum >= 10 {
-            carry = 1;
-            sum -= 10;
-         } 
-         l1 = node1.next.clone();
-         match cur {
-            Some(node) => {
-                 node.next = Some(Box::new(ListNode::new(sum)));
-                 cur = &mut node.next;
-            },
-            None => (),
-        } 
-    }
-
-    while let Some(node2) = &mut l2 {
-        let mut sum = node2.val + carry;
-         carry = 0;
-         if sum >= 10 {
-            carry = 1;
-            sum -= 10;
-         } 
-         l2 = node2.next.clone();
-         match cur {
-            Some(node) => {
-                 node.next = Some(Box::new(ListNode::new(sum)));
-                 cur = &mut node.next;
-            },
-            None => (),
-        } 
-    }
     if carry == 1 {
         match cur {
             Some(node) => {
