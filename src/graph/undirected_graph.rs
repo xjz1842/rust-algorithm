@@ -3,7 +3,7 @@
 	This problem requires you to implement a basic graph function
 */
 
-
+#[warn(unused_variables)]
 use std::collections::{HashMap, HashSet};
 use std::fmt;
 #[derive(Debug, Clone)]
@@ -37,6 +37,7 @@ impl Graph for UndirectedGraph {
        v1.push((edge.0.to_string(),edge.2));
     }
 }
+#[warn(unused_variables)]
 pub trait Graph {
     fn new() -> Self;
     fn adjacency_table_mutable(&mut self) -> &mut HashMap<String, Vec<(String, i32)>>;

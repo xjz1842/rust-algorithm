@@ -44,8 +44,6 @@ where
 
         let mut insert_idx = self.count;
 
-        let mut parent_idx = self.parent_idx(insert_idx);
-
         while insert_idx > 1 {
             let parent_idx = self.parent_idx(insert_idx);
             if (self.comparator)(&self.items[insert_idx], &self.items[parent_idx]) {
