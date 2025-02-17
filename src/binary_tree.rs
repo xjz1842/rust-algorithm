@@ -11,3 +11,5 @@ pub mod is_symmetric;
 pub mod inorder_traversal;
 
 pub mod level_order;
+
+pub mod is_valid_bst;
