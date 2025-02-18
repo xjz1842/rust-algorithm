@@ -61,5 +61,5 @@ fn get_stat_oranges(grid: &Vec<Vec<i32>>,
 fn oranges_rotting_test() {
     let grid = vec![vec![2,1,1],vec![0,1,1],vec![1,0,1]];
 
-    assert_eq!(4,oranges_rotting(grid));
+    assert_eq!(-1,oranges_rotting(grid));
 }
