@@ -13,3 +13,5 @@ pub mod inorder_traversal;
 pub mod level_order;
 
 pub mod is_valid_bst;
+
+pub mod lowest_common_ancestor;
