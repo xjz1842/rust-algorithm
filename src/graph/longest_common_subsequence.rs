@@ -5,7 +5,7 @@ pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
     let text_1: Vec<char> = text1.chars().collect();
     let text_2: Vec<char> = text2.chars().collect();
 
-    // i,j 是代表text1在(0,i)  text2 在(0,j) 位置上 最大的为
+    // i,j 是代表text1在(0,i)  text2 在(0,j) 位置上 最大的公共子序列
     let mut dp = vec![vec![0; len2]; len1];
 
     for r in 0..len1 {
