@@ -7,7 +7,6 @@ pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
         if heap.len() < (len - k as usize + 1) {
             heap.push(e);
             sift_up(&mut heap);
-            println!(" {} {:?}",len - k as usize + 1,heap);
         } else {
             if heap[0] >= e {
                 heap[0] = e;
@@ -28,7 +27,7 @@ fn sift_up(heap: &mut Vec<i32>) {
    }
    let mut parent_idx =  (insert_idx -  1) / 2;
 
-   while parent_idx >= 0 &&
+   while 
      heap[parent_idx] < heap[insert_idx] {
        heap.swap(parent_idx, insert_idx);
 
@@ -68,9 +67,31 @@ fn sift_down(heap: &mut Vec<i32>) {
 }
 
 
+pub fn find_kth_largest_1(nums: Vec<i32>, k: i32) -> i32 {
+    // 桶排序
+     let mut bucket = vec![0;20001];
+
+     let mut k = k;
+     for num in nums.iter() {
+        bucket[*num as usize + 10000] += 1;
+     }
+
+     for i in (0..bucket.len()).rev(){
+        let c = bucket[i];
+            if k > c  {
+                k -= c;
+            } else {
+               return i as i32 - 10000;
+            }
+         }
+     -1
+}
+
 #[test]
 fn find_kth_largest_test() {
     let nums = vec![3,2,1,5,6,4];
     let k = 2;
     assert_eq!(5,find_kth_largest(nums, k));
+    let nums = vec![3,2,1,5,6,4];
+    assert_eq!(5, find_kth_largest_1(nums, k));
 }
