@@ -20,7 +20,7 @@ fn dfs(row: usize, n: usize, candidate: &mut Vec<Vec<char>>, result: &mut Vec<Ve
                 candidate
                     .clone()
                     .iter()
-                    .map(|x| x.iter().map(|y| y.to_owned()).collect::<String>())
+                    .map(|x| x.iter().collect::<String>())
                     .collect::<Vec<String>>(),
             );
         return;
