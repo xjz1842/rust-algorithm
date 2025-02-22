@@ -50,7 +50,6 @@ pub fn largest_rectangle_area(heights: Vec<i32>) -> i32 {
        } else {
           heights.len()
        };
-       println!("===={} {} {}",width,last_idx, heights[last_idx]);
        let height = heights[last_idx];
        max_area = max_area.max(width * height as usize);
     }
