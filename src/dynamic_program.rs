@@ -13,3 +13,5 @@ pub mod word_break;
 pub mod max_product;
 
 pub mod length_of_list;
+
+pub mod min_distance;
