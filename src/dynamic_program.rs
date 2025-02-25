@@ -15,3 +15,5 @@ pub mod max_product;
 pub mod length_of_list;
 
 pub mod min_distance;
+
+pub mod longest_valid_parentheses;

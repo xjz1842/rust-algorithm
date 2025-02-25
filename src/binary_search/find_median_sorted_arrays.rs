@@ -23,8 +23,8 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
     }
     let i = left;
     let j = (len1 + len2 + 1) as i32 / 2 - 2 - i;
-     
-    //  a[left] <= b[j+1] 且 a[right] > b[j+1] = b[j]，所以答案是 i=left
+    // 此时 left 等于 right-1
+    // a[left] <= b[j+1] 且 a[right] > b[j]，所以答案是 i=left
     let left_1 = if i >= 0 {
           nums1[i as usize]
     }  else {
