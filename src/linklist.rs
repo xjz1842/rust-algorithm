@@ -10,3 +10,5 @@ pub mod merge_lists;
 pub mod reverse_dual_list;
 
 pub mod add_two_numbers;
+
+pub mod lru_cache;
