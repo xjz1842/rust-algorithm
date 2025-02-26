@@ -8,11 +8,23 @@ struct Node {
     prev: Option<Rc<RefCell<Node>>>,
     next: Option<Rc<RefCell<Node>>>,
 }
+
 struct LRUCache {
     capacity: usize,
     cache: HashMap<i32, Rc<RefCell<Node>>>,
     head: Option<Rc<RefCell<Node>>>,
     tail: Option<Rc<RefCell<Node>>>,
+}
+
+impl Node {
+    fn new(key : i32, value : i32)-> Self {
+        Node {
+            key: key,
+            value: value,
+            prev: None,
+            next: None
+        }
+    }
 }
 
 /** 

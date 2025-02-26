@@ -17,3 +17,5 @@ pub mod length_of_list;
 pub mod min_distance;
 
 pub mod longest_valid_parentheses;
+
+pub mod unique_paths;
