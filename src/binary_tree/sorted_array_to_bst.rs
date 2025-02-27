@@ -22,26 +22,25 @@ use std::cell:: RefCell;
 
 pub fn sorted_array_to_bst(nums: Vec<i32>) ->
  Option<Rc<RefCell<TreeNode>>> {
-    return build(&nums, 0, nums.len());
+    return build(&nums, 0, nums.len() as i32);
 }
 
-fn build(nums: &Vec<i32>,left: usize, right:usize) ->
+fn build(nums: &Vec<i32>,left: i32, right:i32) ->
 Option<Rc<RefCell<TreeNode>>> {
     if left >= right { return None; }
     let mid = (left + right) / 2;
+    let mut node = TreeNode::new(nums[mid as usize]);
 
-    let mut node = TreeNode::new(nums[mid]);
-
-    node.left = build(nums, left , mid-1);
+    node.left = build(nums, left , mid);
     node.right = build(nums, mid + 1, right);
 
-    Some(Rc::new(RefCell::new(node)))
+    return Some(Rc::new(RefCell::new(node)));
 }
 
 #[test]
 fn sorted_array_to_bst_test() {
      // tree
-     let nums = vec![3,1];
+     let nums = vec![-10,-3,0,5,9];
     println!("{:?}",sorted_array_to_bst(nums))
 }
 
