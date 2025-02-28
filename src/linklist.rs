@@ -14,3 +14,5 @@ pub mod add_two_numbers;
 pub mod lru_cache;
 
 pub mod remove_nth_from_end;
+
+pub mod swap_pairs;
