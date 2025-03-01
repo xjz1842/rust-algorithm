@@ -21,3 +21,5 @@ pub mod sorted_array_to_bst;
 pub mod kth_smallest;
 
 pub mod right_side_view;
+
+pub mod flatten;
