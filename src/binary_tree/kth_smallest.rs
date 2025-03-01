@@ -58,6 +58,6 @@ fn kth_smallest_test() {
         node.borrow_mut().right = Some(Rc::new(RefCell::new(
             TreeNode::new(3))));
     }
-    let mut k = 3;
+    let  k = 3;
    println!("{}",kth_smallest(root, k));
 }
