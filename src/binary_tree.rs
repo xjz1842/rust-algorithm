@@ -17,3 +17,5 @@ pub mod is_valid_bst;
 pub mod lowest_common_ancestor;
 
 pub mod sorted_array_to_bst;
+
+pub mod kth_smallest;
