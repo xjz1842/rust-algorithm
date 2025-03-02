@@ -18,3 +18,5 @@ pub mod remove_nth_from_end;
 pub mod swap_pairs;
 
 pub mod sort_list;
+
+pub mod merge_k_lists;
