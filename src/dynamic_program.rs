@@ -21,3 +21,5 @@ pub mod longest_valid_parentheses;
 pub mod unique_paths;
 
 pub mod min_path_sum;
+
+pub mod longest_palindrome;
