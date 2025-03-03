@@ -1,6 +1,6 @@
 pub fn unique_paths(m: i32, n: i32) -> i32 {
     //代表i,j位置的多少条路径
-    let mut dp = vec![vec![0;n as usize];m as usize];
+{}    let mut dp = vec![vec![0;n as usize];m as usize];
    
     // 第一行
     for c in 0..n as usize {
