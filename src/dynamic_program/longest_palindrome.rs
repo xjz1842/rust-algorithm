@@ -11,15 +11,15 @@ pub fn longest_palindrome(s: String) -> String {
     let mut max_end = 0;    //最长回文串的终点
     let mut max_len = 1;  //最长回文串的长度
 
-    for i in 1..len {
-        for j in 0..i {
+    for j in 1..len {
+        for i in 0..j {
             if chars[i] == chars[j] &&
-              ( (i - j) <= 2  ||  dp[i+1][j-1] ) {
+              ( (j - i) <= 2  ||  dp[i+1][j-1] ) {
                 dp[i][j] = true;
-                if (i - j + 1) > max_len {
-                    max_len = i - j + 1;
-                    max_start = j;
-                    max_end = i;
+                if (j - i + 1) > max_len {
+                    max_len = j - i + 1;
+                    max_start = i;
+                    max_end = j;
                 }
             }
         }
@@ -29,6 +29,6 @@ pub fn longest_palindrome(s: String) -> String {
 
 #[test]
 fn longest_palindrome_test() {
-  let str = "ccc".into();
+  let str = "aaaa".into();
   println!("{}", longest_palindrome(str));
 }
