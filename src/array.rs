@@ -23,3 +23,5 @@ pub mod are_anagrams;
 pub mod find_duplicate_number;
 
 pub mod long_unrepeat_substring;
+
+pub mod merge_two_sort_array;
