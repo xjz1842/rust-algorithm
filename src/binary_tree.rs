@@ -23,3 +23,5 @@ pub mod kth_smallest;
 pub mod right_side_view;
 
 pub mod flatten;
+
+pub mod max_path_sum;
