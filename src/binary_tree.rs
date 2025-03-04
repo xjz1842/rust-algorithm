@@ -25,3 +25,5 @@ pub mod right_side_view;
 pub mod flatten;
 
 pub mod max_path_sum;
+
+pub mod path_sum;
