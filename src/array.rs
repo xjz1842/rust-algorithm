@@ -27,3 +27,5 @@ pub mod long_unrepeat_substring;
 pub mod merge_two_sort_array;
 
 pub mod remove_element;
+
+pub mod remove_duplicates;
