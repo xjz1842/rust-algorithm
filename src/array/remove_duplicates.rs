@@ -23,9 +23,28 @@ pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
        left as i32
 }
 
+pub fn remove_duplicates_1(nums: &mut Vec<i32>) -> i32 {
+    let n = nums.len();
+    if n <= 2 {
+        return n as i32;
+    }
+    let mut j = 2;
+    for i in 2..n {
+        if nums[i] != nums[j - 2] {
+            nums[j] = nums[i];
+            j += 1;
+        }
+    }
+    j as i32
+}
+
 #[test]
 fn remove_duplicates_test() {
     let mut nums = vec![0,0,1,1,1,2,2,3,3];
     let result = remove_duplicates(&mut nums);
+    println!("{:?} {} ", nums, result);
+
+    let mut nums = vec![0,0,1,1,1,2,2,3,3];
+    let result = remove_duplicates_1(&mut nums);
     println!("{:?} {} ", nums, result);
 }
