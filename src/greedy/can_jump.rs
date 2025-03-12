@@ -1,14 +1,17 @@
 pub fn can_jump(nums: Vec<i32>) -> bool {
     let len = nums.len();
-    let mut  right_most = 0;
+     let mut right_most = 0;
 
-    for i in 0..len-1 {
+    for i in 0..len {
         if right_most < i {
             return false;
         }
-         right_most = right_most.max(i + nums[i] as usize);
-    }
-    right_most >= len-1
+        if right_most >= len-1 {
+            return true;
+        }
+        right_most = right_most.max(i + nums[i] as usize);
+     }
+      true
 }
 
 #[test]
