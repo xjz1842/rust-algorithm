@@ -33,3 +33,5 @@ pub mod remove_duplicates;
 pub mod h_index;
 
 pub mod random_set;
+
+pub mod score_of_string;
