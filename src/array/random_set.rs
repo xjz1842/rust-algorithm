@@ -25,8 +25,8 @@ impl RandomizedSet {
         if self.map.contains_key(&val) {
             return false;
         }else {
-            self.map.insert(val, self.list.len() as i32);
             self.list.push(val);
+            self.map.insert(val, self.list.len() as i32 -1);
             return true;
         }
     }
@@ -36,23 +36,25 @@ impl RandomizedSet {
          !self.map.contains_key(&val) {
             return false;
         }
-        let del_index = self.map.get(&val).unwrap();
-        if *del_index == self.list.len() as i32  {
+        let del_index: &i32 = self.map.get(&val).unwrap();
+        if *del_index == (self.list.len() as i32 - 1) {
             self.list.pop();
+            self.map.remove(&val);
             return true;
         } else {
             let last_index = self.list.len() - 1 ;
             self.list.swap(*del_index as usize
                 , last_index);
+            self.map.insert(self.list[last_index], *del_index);    
             self.list.pop();    
+            self.map.remove(&val);
             return true;
         }
     }
     
     fn get_random(&self) -> i32 {
-        
         let mut rng = rand::thread_rng();
-        let idx = rng.gen_range(0,(self.list.len()));
+        let idx = rng.gen_range(0,self.list.len());
         return self.list[idx];
     }
 }
