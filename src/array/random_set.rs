@@ -43,9 +43,9 @@ impl RandomizedSet {
             return true;
         } else {
             let last_index = self.list.len() - 1 ;
-            self.map.insert(self.list[last_index], del_index);    
-            self.list.swap(del_index as usize
-                , last_index);
+            let last_val = self.list[last_index];
+            self.map.insert(last_val, del_index);    
+            self.list[del_index as usize] = last_val;
             self.list.pop();    
             self.map.remove(&val);
             return true;
@@ -73,6 +73,5 @@ fn random_set_test() {
      let val = 3;
      let ret_1: bool = obj.insert(val);
      let ret_2: bool = obj.remove(val);
-     let ret_3: i32 = obj.get_random();
-    println!("{} {} {}", ret_1, ret_2, ret_3);
+    println!("{} {} ", ret_1, ret_2);
 }
