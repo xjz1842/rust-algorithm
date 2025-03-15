@@ -32,20 +32,20 @@ impl RandomizedSet {
     }
     
     fn remove(&mut self, val: i32) -> bool {
-        if self.map.is_empty() ||
-         !self.map.contains_key(&val) {
+        if !self.map.contains_key(&val) {
             return false;
         }
         let del_index: &i32 = self.map.get(&val).unwrap();
-        if *del_index == (self.list.len() as i32 - 1) {
+        let del_index = *del_index;
+        if del_index== (self.list.len() as i32 - 1) {
             self.list.pop();
             self.map.remove(&val);
             return true;
         } else {
             let last_index = self.list.len() - 1 ;
-            self.list.swap(*del_index as usize
+            self.map.insert(self.list[last_index], del_index);    
+            self.list.swap(del_index as usize
                 , last_index);
-            self.map.insert(self.list[last_index], *del_index);    
             self.list.pop();    
             self.map.remove(&val);
             return true;
