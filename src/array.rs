@@ -31,3 +31,5 @@ pub mod remove_element;
 pub mod remove_duplicates;
 
 pub mod h_index;
+
+pub mod random_set;

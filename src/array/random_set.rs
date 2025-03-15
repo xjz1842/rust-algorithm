@@ -1,0 +1,76 @@
+use std::collections::HashMap;
+
+use rand::Rng;
+
+struct RandomizedSet {
+  list : Vec<i32>,
+  map : HashMap<i32, i32>,
+}
+
+/** 
+ * `&self` means the method takes an immutable reference.
+ * If you need a mutable reference, change it to `&mut self` instead.
+ */
+impl RandomizedSet {
+
+    fn new() -> Self {
+        Self
+         {
+          list : Vec::new(),
+          map : HashMap::new()
+         }
+    }
+    
+    fn insert(&mut self, val: i32) -> bool {
+        if self.map.contains_key(&val) {
+            return false;
+        }else {
+            self.map.insert(val, self.list.len() as i32);
+            self.list.push(val);
+            return true;
+        }
+    }
+    
+    fn remove(&mut self, val: i32) -> bool {
+        if self.map.is_empty() ||
+         !self.map.contains_key(&val) {
+            return false;
+        }
+        let del_index = self.map.get(&val).unwrap();
+        if *del_index == self.list.len() as i32  {
+            self.list.pop();
+            return true;
+        } else {
+            let last_index = self.list.len() - 1 ;
+            self.list.swap(*del_index as usize
+                , last_index);
+            self.list.pop();    
+            return true;
+        }
+    }
+    
+    fn get_random(&self) -> i32 {
+        
+        let mut rng = rand::thread_rng();
+        let idx = rng.gen_range(0,(self.list.len()));
+        return self.list[idx];
+    }
+}
+
+/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * let obj = RandomizedSet::new();
+ * let ret_1: bool = obj.insert(val);
+ * let ret_2: bool = obj.remove(val);
+ * let ret_3: i32 = obj.get_random();
+ */
+
+#[test]
+fn random_set_test() {
+    let mut obj = RandomizedSet::new();
+     let val = 3;
+     let ret_1: bool = obj.insert(val);
+     let ret_2: bool = obj.remove(val);
+     let ret_3: i32 = obj.get_random();
+    println!("{} {} {}", ret_1, ret_2, ret_3);
+}
