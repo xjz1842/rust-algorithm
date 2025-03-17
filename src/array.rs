@@ -35,3 +35,5 @@ pub mod h_index;
 pub mod random_set;
 
 pub mod score_of_string;
+
+pub mod can_complete_circuit;
