@@ -54,7 +54,7 @@ impl RandomizedSet {
     
     fn get_random(&self) -> i32 {
         let mut rng = rand::thread_rng();
-        let idx = rng.gen_range(0,self.list.len());
+        let idx = rng.gen_range(0..self.list.len());
         return self.list[idx];
     }
 }
